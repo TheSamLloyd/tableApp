@@ -8,10 +8,10 @@ var reservations=[];
 app.get("/", function(req,res){
 	res.sendFile(path.join(__dirname, "index.html"));
 });
-app.get("/reserve", function(req,res){
+app.get("/reservation.html", function(req,res){
 	res.sendFile(path.join(__dirname, "reservation.html"))
 });
-app.get("/tables", function(req,res){
+app.get("/tables.html", function(req,res){
 	res.sendFile(path.join(__dirname, "tables.html"))
 });
 app.get("/api/tables",function(req,res){
