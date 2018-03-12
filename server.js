@@ -17,7 +17,7 @@ app.get("/tables.html", function(req,res){
 app.get("/api/tables",function(req,res){
 	res.send(reservations);
 })
-app.post("/api/new",function(req){
+app.post("/api/new",function(req,res){
 	reservations.push(req);
 	if (reservations.length>totalTables){
 		res.send(false);
