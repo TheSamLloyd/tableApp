@@ -15,10 +15,12 @@ app.get("/tables.html", function(req,res){
 	res.sendFile(path.join(__dirname, "tables.html"))
 });
 app.get("/api/tables",function(req,res){
-	res.send(reservations);
+	res.send(JSON.stringify(reservations));
 })
 app.post("/api/new",function(req,res){
-	reservations.push(req);
+	reservations.push(req.query);
+	console.log(req.query);
+	console.log(reservations);
 	if (reservations.length>totalTables){
 		res.send(false);
 	}
