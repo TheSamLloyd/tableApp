@@ -8,17 +8,19 @@ var reservations=[];
 app.get("/", function(req,res){
 	res.sendFile(path.join(__dirname, "index.html"));
 });
-app.get("/reserve", function(req,res){
+app.get("/reservation.html", function(req,res){
 	res.sendFile(path.join(__dirname, "reservation.html"))
 });
-app.get("/tables", function(req,res){
+app.get("/tables.html", function(req,res){
 	res.sendFile(path.join(__dirname, "tables.html"))
 });
 app.get("/api/tables",function(req,res){
-	res.send(reservations);
+	res.send(JSON.stringify(reservations));
 })
-app.post("/api/new",function(req){
-	reservations.push(req);
+app.post("/api/new",function(req,res){
+	reservations.push(req.query);
+	console.log(req.query);
+	console.log(reservations);
 	if (reservations.length>totalTables){
 		res.send(false);
 	}
