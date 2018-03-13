@@ -11,7 +11,7 @@ var ui = {
     inputPhone: $("#reserve_phone"),
     inputEmail: $("#reserve_email"),
     inputId: $("#reserve_id"),
-    submitRes: $('submitRes'),
+    submitRes: $('#submitRes'),
 }
 
 if (ui.tableList.length > 0) {
