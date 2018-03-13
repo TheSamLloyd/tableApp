@@ -61,10 +61,10 @@ function createTableListItem(text, index) {
 
 function makeReservation() {
     var reservationData = {
-        name: ui.inputName.value(),
-        phone: ui.inputPhone.value(),
-        email: ui.inputEmail.value(),
-        id: ui.inputId.value(),
+        name: ui.inputName.val(),
+        phone: ui.inputPhone.val(),
+        email: ui.inputEmail.val(),
+        id: ui.inputId.val(),
     };
 
     $.ajax({
