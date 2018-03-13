@@ -42,8 +42,8 @@ function displayTables() {
             }
         }
     }).catch(function (error) {
-        alert(error);
-        alert("There has been an error submitting your reservation.");
+        console.log(error);
+        alert("There has been an error loading reservations.");
     })
 }
 
