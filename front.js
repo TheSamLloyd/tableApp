@@ -73,7 +73,12 @@ function makeReservation() {
         data: reservationData,
     }).then(function (result) {
         // alert(result);
-        alert("Your reservation has been made");
+        console.log(result);
+        if (result) {
+            alert("Your reservation has been made");
+        } else {
+            alert("Sorry, you're on the waiting list.");
+        }
     }).catch(function (error) {
         console.log(error);
         alert("There has been an error submitting your reservation.");
