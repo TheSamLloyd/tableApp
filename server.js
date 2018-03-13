@@ -5,6 +5,10 @@ const app = express();
 var PORT = (process.env.PORT || 80);
 var totalTables = 5;
 var reservations=[];
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 app.get("/", function(req,res){
 	res.sendFile(path.join(__dirname, "index.html"));
 });
@@ -25,8 +29,8 @@ app.get("/api/tables",function(req,res){
 	res.send(JSON.stringify(reservations));
 })
 app.post("/api/new",function(req,res){
-	reservations.push(req.query);
-	console.log(req.query);
+	reservations.push(req.body);
+	console.log(req.body);
 	if (reservations.length>totalTables){
 		res.send(false);
 	}
