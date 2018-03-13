@@ -12,7 +12,8 @@ app.get("/index.html", function(req,res){
 	res.sendFile(path.join(__dirname, "index.html"));
 });
 app.get("/front.js",function(req,res){
-	res.sendFile("./front.js")
+	res.setHeader("content-type","text/javascript")
+	res.sendFile(path.join(__dirname,"front.js"));
 })
 app.get("/reservation.html", function(req,res){
 	res.sendFile(path.join(__dirname, "reservation.html"))
