@@ -29,8 +29,8 @@ app.get("/api/tables",function(req,res){
 	res.send(JSON.stringify(reservations));
 })
 app.post("/api/new",function(req,res){
-	reservations.push(req.query);
-	console.log(req.query);
+	reservations.push(req.body);
+	console.log(req.body);
 	if (reservations.length>totalTables){
 		res.send(false);
 	}
