@@ -72,10 +72,10 @@ function makeReservation() {
         method: "POST",
         data: reservationData,
     }).then(function (result) {
-        alert(result);
+        // alert(result);
         alert("Your reservation has been made");
     }).catch(function (error) {
-        alert(error);
+        console.log(error);
         alert("There has been an error submitting your reservation.");
     })
 }
