@@ -7,14 +7,19 @@ var tablesApiUrl = "api/tables";
 var ui = {
     tableList: $("#currentRes"),
     waitList: $("#waitList"),
-    inputName: $("#reservationName"),
-    inputPhone: $("#reservationPhone"),
-    inputEmail: $("#reservationEmail"),
-    inputId: $("#reservationID"),
+    inputName: $("#reserve_name"),
+    inputPhone: $("#reserve_phone"),
+    inputEmail: $("#reserve_email"),
+    inputId: $("#reserve_id"),
+    submitRes: $('submitRes'),
 }
 
 if (ui.tableList.length > 0) {
     displayTables();
+}
+
+if (ui.submitRes.length > 0) {
+    ui.submitRes.on('click', makeReservation);
 }
 
 function displayTables() {
