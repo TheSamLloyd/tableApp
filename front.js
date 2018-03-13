@@ -33,7 +33,7 @@ function displayTables() {
         var isWaitList = 0;
 
         for (var i = 0; i < result.length; i++) {
-            var itemLi = createTableListItem(index, result[i].id);
+            var itemLi = createTableListItem(result[i].id, index + 1);
             index++;
 
             if (isWaitList) {
@@ -54,7 +54,7 @@ function displayTables() {
 
 function createTableListItem(text, index) {
     var item = $("<li>").text(" - " + text);
-    item.prepend($('<span>').addClass('label label-primary').text(index));
+    item.prepend($('<span>').addClass('badge badge-primary').text(index));
 
     return item;
 }
