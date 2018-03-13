@@ -24,7 +24,6 @@ function displayTables() {
     }).then(function (result) {
         alert(result);
         result = JSON.parse(result);
-        
         var index = 0;
         var isWaitList = 0;
 
