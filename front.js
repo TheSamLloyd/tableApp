@@ -1,8 +1,8 @@
 // (API endpoint) "/api/tables" (GET) return tables object
 // (API endpoint) "/api/new"(POST)
 
-var reservationApiUrl = "api/tables";
-var tablesApiUrl = "api/new";
+var reservationApiUrl = "api/new";
+var tablesApiUrl = "api/tables";
 
 var ui = {
     tableList: $("#currentRes"),
@@ -22,7 +22,7 @@ function displayTables() {
         url: tablesApiUrl,
         method: "GET",
     }).then(function (result) {
-        alert(result);
+        console.log(result);
         result = JSON.parse(result);
         var index = 0;
         var isWaitList = 0;
